@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://btd6vnxj4x2ld"]
+[gd_scene load_steps=4 format=3 uid="uid://btd6vnxj4x2ld"]
 
 [ext_resource type="Theme" uid="uid://boak2n12drima" path="res://main_theme.tres" id="1_p71mb"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_ui.gd" id="2_yftce"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jhjxs"]
 size = Vector2(25, 30)
@@ -16,6 +17,7 @@ offset_bottom = -114.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_p71mb")
+script = ExtResource("2_yftce")
 
 [node name="Color" type="ColorRect" parent="."]
 layout_mode = 1
