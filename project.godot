@@ -11,5 +11,23 @@ config_version=5
 [application]
 
 config/name="ststut"
+run/main_scene="res://scenes/battle/battle.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
+
+[display]
+
+window/size/viewport_width=256
+window/size/viewport_height=144
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="viewport"
+
+[layer_names]
+
+2d_physics/layer_1="card_target_selector"
+2d_physics/layer_2="card_drop_area"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
