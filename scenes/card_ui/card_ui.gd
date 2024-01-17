@@ -5,3 +5,4 @@ signal reparent_requested(which_card_ui: CardUI)
 
 @onready var color: ColorRect = $Color
 @onready var state: Label = $State
+@onready var card_state_machine: CardStateMachine = $CardStateMachine as CardStateMachine 
