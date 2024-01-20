@@ -27,6 +27,14 @@ func on_gui_input(event: InputEvent)-> void:
 	if current_state:
 		current_state.on_gui_input(event)
 		
+func on_mouse_entered()-> void:
+	if current_state:
+		current_state.on_mouse_entered()
+		
+func on_mouse_exited()-> void:
+	if current_state:
+		current_state.on_mouse_exited()
+		
 func _on_transition_requested(from: CardState, to: CardState.State)-> void:
 	#if two states are mismatching then there was an error
 	if from != current_state:
