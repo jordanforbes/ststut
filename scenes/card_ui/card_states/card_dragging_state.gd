@@ -18,12 +18,18 @@ func enter()-> void:
 	threshold_timer.timeout.connect(func(): minimum_drag_time_elapsed = true)
 
 func on_input(event: InputEvent)-> void:
+	var single_targeted := card_ui.card.is_single_targeted()
 	var mouse_motion := event is InputEventMouseMotion 
 	#card drag is cancelled if right mouse is clicked
 	var cancel = event.is_action_pressed("right_mouse")
 	#card is released if left mouse is let go or clicked again
 	var confirm = event.is_action_released("left_mouse") or event.is_action_pressed("left_mouse")
-
+	
+	#if the card is single targeted, the mouse is moving, and there is at least 1 enemy, transition into AIMING state
+	if single_targeted and mouse_motion and card_ui.targets.size() > 0:
+		transition_requested.emit(self, CardState.State.AIMING)
+		return 
+		
 	if mouse_motion:
 		#update card position to follow mouse cursor
 		card_ui.global_position = card_ui.get_global_mouse_position() - card_ui.pivot_offset

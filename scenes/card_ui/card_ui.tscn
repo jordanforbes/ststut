@@ -75,6 +75,7 @@ state = 4
 
 [node name="CardAimingState" type="Node" parent="CardStateMachine"]
 script = ExtResource("8_qrm7l")
+state = 3
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
