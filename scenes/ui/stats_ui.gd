@@ -4,7 +4,7 @@ extends HBoxContainer
 @onready var block: HBoxContainer = $Block 
 @onready var block_label: Label = %BlockLabel 
 @onready var health: HBoxContainer = $Health 
-@onready var health_label: HBoxContainer = %HealthLabel
+@onready var health_label: Label = %HealthLabel
 
 #change stats in labels
 func update_stats(stats: Stats) -> void:
