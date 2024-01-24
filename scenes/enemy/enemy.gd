@@ -10,6 +10,8 @@ const ARROW_OFFSET := 5
 @onready var arrow : Sprite2D = $Arrow 
 @onready var stats_ui: StatsUI = $StatsUI as StatsUI 
 
+#debug
+#make sure stats are connected to UI
 #func _ready()-> void: 
 	#await get_tree().create_timer(2).timeout
 	#take_damage(3)
@@ -46,3 +48,11 @@ func take_damage(damage: int) -> void:
 	#remove enemy if it is dead
 	if stats.health <= 0:
 		queue_free()
+
+
+func _on_area_entered(_area: Area2D):
+	arrow.show()
+
+
+func _on_area_exited(_area: Area2D):
+	arrow.hide()
