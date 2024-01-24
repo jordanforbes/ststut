@@ -3,10 +3,15 @@ extends Control
 
 signal reparent_requested(which_card_ui: CardUI)
 
-@export var card: Card
+@export var card: Card : set = _set_card
 
-@onready var color: ColorRect = $Color
-@onready var state: Label = $State
+const BASE_STYLEBOX := preload("res://scenes/card_ui/card_base_stylebox.tres")
+const DRAG_STYLEBOX := preload("res://scenes/card_ui/card_dragging_state.tres")
+const HOVER_STYLEBOX := preload("res://scenes/card_ui/card_hover_stylebox.tres")
+
+@onready var panel = $Panel
+@onready var cost = $Cost
+@onready var icon = $Icon
 #drag from tree and press ctrl before release to create instance variable
 @onready var drop_point_detector = $DropPointDetector
 #instantiate card state machine 
@@ -37,6 +42,14 @@ func _on_mouse_entered()-> void:
 	
 func _on_mouse_exited()-> void:
 	card_state_machine.on_mouse_exited()
+	
+func _set_card(value: Card) -> void:
+	if not is_node_ready():
+		await ready
+	
+	card = value 
+	cost.text = str(card.cost)
+	icon.texture = card.icon
 
 #helps cards move back to hand if released in hand section of screen
 func _on_drop_point_detector_area_entered(area):

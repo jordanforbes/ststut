@@ -4,8 +4,6 @@ extends CardState
 const MOUSE_Y_SNAPBACK_THRESHOLD := 138 
 
 func enter() -> void:
-	card_ui.color.color = Color.WEB_PURPLE
-	card_ui.state.text = "AIMING"
 	card_ui.targets.clear()
 	
 	#animate card to center of hand
