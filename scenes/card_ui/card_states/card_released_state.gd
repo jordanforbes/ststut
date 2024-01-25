@@ -10,7 +10,7 @@ func enter()-> void:
 	#if, when card is released, there is a valid target, then the card is played
 	if not card_ui.targets.is_empty():
 		played = true
-		print("play card for target(s) ", card_ui.targets)	
+		card_ui.play()
 
 
 func on_input(event: InputEvent)-> void:

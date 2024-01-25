@@ -4,6 +4,7 @@ extends Control
 signal reparent_requested(which_card_ui: CardUI)
 
 @export var card: Card : set = _set_card
+@export var char_stats: CharacterStats
 
 const BASE_STYLEBOX := preload("res://scenes/card_ui/card_base_stylebox.tres")
 const DRAG_STYLEBOX := preload("res://scenes/card_ui/card_dragging_state.tres")
@@ -34,6 +35,14 @@ func animate_to_position(new_position: Vector2, duration: float)-> void:
 	tween = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT)
 	tween.tween_property(self, "global_position", new_position, duration)
 	
+func play() -> void:
+	if not card:
+		return 
+		
+	card.play(targets, char_stats)	
+	#after playing, delete cardUI scene
+	queue_free()
+
 func _on_gui_input(event):
 	card_state_machine.on_gui_input(event)
 	
