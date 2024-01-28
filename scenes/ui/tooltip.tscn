@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cn3f6p8m44awq"]
+
+[ext_resource type="Theme" uid="uid://boak2n12drima" path="res://main_theme.tres" id="1_jbxvk"]
+
+[node name="Tooltip" type="PanelContainer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.0
+offset_right = 55.0
+offset_bottom = 36.0
+grow_horizontal = 2
+theme = ExtResource("1_jbxvk")
