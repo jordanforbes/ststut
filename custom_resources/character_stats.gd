@@ -15,7 +15,7 @@ func set_mana(value: int)-> void:
 	mana = value 
 	stats_changed.emit()
 	
-func reset_mana() -> void: 
+func reset_mana() -> void:
 	self.mana = max_mana 
 	
 #do we have enough mana to play a card?
