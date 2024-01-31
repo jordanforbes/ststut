@@ -14,7 +14,7 @@ func enter()-> void:
 		card_ui.play()
 
 
-func on_input(event: InputEvent)-> void:
+func on_input(_event: InputEvent)-> void:
 	#if card is played then we don't really care about additional input
 	if played:
 		return

@@ -10,9 +10,9 @@ const BASE_STYLEBOX := preload("res://scenes/card_ui/card_base_stylebox.tres")
 const DRAG_STYLEBOX := preload("res://scenes/card_ui/card_dragging_state.tres")
 const HOVER_STYLEBOX := preload("res://scenes/card_ui/card_hover_stylebox.tres")
 
-@onready var panel = $Panel
-@onready var cost = $Cost
-@onready var icon = $Icon
+@onready var panel: Panel = $Panel
+@onready var cost: Label = $Cost
+@onready var icon: TextureRect = $Icon
 #drag from tree and press ctrl before release to create instance variable
 @onready var drop_point_detector = $DropPointDetector
 #instantiate card state machine 
@@ -65,6 +65,9 @@ func _set_card(value: Card) -> void:
 		await ready
 	
 	card = value 
+	print("CARD DEBUG")
+	print(card)
+	print(value)
 	cost.text = str(card.cost)
 	icon.texture = card.icon
 	

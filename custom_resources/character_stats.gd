@@ -5,7 +5,7 @@ extends Stats
 @export var cards_per_turn: int 
 @export var max_mana: int
 
-var mana: int :  set = set_mana 
+var mana: int : set = set_mana 
 var deck: CardPile 
 var discard: CardPile 
 var draw_pile: CardPile 

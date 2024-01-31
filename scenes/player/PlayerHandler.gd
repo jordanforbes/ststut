@@ -7,8 +7,7 @@ const HAND_DRAW_INTERVAL := 0.25
 
 var character: CharacterStats
 
-
-func start_Battle(char_stats: CharacterStats) -> void: 
+func start_battle(char_stats: CharacterStats) -> void: 
 	character = char_stats
 	character.draw_pile = character.deck.duplicate(true)
 	character.draw_pile.shuffle()
