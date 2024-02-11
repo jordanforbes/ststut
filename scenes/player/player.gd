@@ -16,7 +16,7 @@ extends Node2D
 	
 
 func set_character_stats(value: CharacterStats) -> void: 
-	stats = value.create_instance()
+	stats = value
 	
 	#connect signal if the signal was not already connected
 		#it is possible to connect the signal twice in godot 

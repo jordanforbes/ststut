@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://crvw7itvdxus2"]
+
+[ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_5mj0w"]
+[ext_resource type="Script" path="res://enemies/ghost/ghost_attack_action.gd" id="2_b13m0"]
+[ext_resource type="Script" path="res://enemies/ghost/ghost_block_action.gd" id="3_xlkql"]
+[ext_resource type="Script" path="res://enemies/ghost/ghost_mega_block_action.gd" id="4_qf5u2"]
+
+[node name="GhostEnemyAI" type="Node"]
+script = ExtResource("1_5mj0w")
+
+[node name="AttackAction" type="Node" parent="."]
+script = ExtResource("2_b13m0")
+type = null
+chance_weight = null
+
+[node name="BlockAction" type="Node" parent="."]
+script = ExtResource("3_xlkql")
+
+[node name="MegaBlockAction" type="Node" parent="."]
+script = ExtResource("4_qf5u2")

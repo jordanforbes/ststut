@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://cmcvf3ihxifh5" path="res://scenes/enemy/enemy.tscn" id="2_1hpqs"]
 [ext_resource type="Script" path="res://scenes/ui/hand.gd" id="2_4eejn"]
 [ext_resource type="PackedScene" uid="uid://dppgts8kohpxu" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_3854v"]
-[ext_resource type="Resource" uid="uid://dwgyad8pxcqw5" path="res://enemies/ghost/test_enemy.tres" id="3_exidb"]
 [ext_resource type="PackedScene" uid="uid://dtm3fcxgao2ay" path="res://scenes/player/player.tscn" id="3_sbgff"]
 [ext_resource type="Resource" uid="uid://dtpl4vd8jewo8" path="res://characters/warrior/warrior.tres" id="4_vdkp2"]
+[ext_resource type="Resource" uid="uid://cprslwewpkfsj" path="res://enemies/ghost/ghost_enemy.tres" id="5_rnoqr"]
 [ext_resource type="Script" path="res://scenes/ui/battle_ui.gd" id="7_lhi3i"]
 [ext_resource type="Script" path="res://scenes/player/PlayerHandler.gd" id="8_h12ky"]
 [ext_resource type="PackedScene" uid="uid://cp5vx5epuse16" path="res://scenes/card_ui/mana_ui.tscn" id="11_6re08"]
@@ -38,7 +38,7 @@ debug_color = Color(0, 0.6, 0.701961, 0.14902)
 
 [node name="Enemy" parent="." instance=ExtResource("2_1hpqs")]
 position = Vector2(202, 78)
-stats = ExtResource("3_exidb")
+stats = ExtResource("5_rnoqr")
 
 [node name="Player" parent="." instance=ExtResource("3_sbgff")]
 position = Vector2(52, 80)
