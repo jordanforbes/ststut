@@ -16,3 +16,4 @@ signal player_turn_ended
 
 #enemy related event 
 signal enemy_action_completed(enemy: Enemy)
+signal enemy_turn_ended

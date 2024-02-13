@@ -1,11 +1,16 @@
 extends EnemyAction
 
+@export var block := 6
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func perform_action() -> void: 
+	if not enemy or not target:
+		return 
+	
+	var block_effect := BlockEffect.new()
+	block_effect.amount = block
+	block_effect.execute([enemy])
+	
+	get_tree().create_timer(0.6, false).timeout.connect(
+		func():
+			Events.enemy_action_completed.emit(enemy)
+	)
