@@ -1,8 +1,7 @@
 class_name EnemyActionPicker 
 extends Node
 
-#the enemy's "brain"
-
+#the enemy's AI
 @export var enemy: Enemy: set = _set_enemy 
 @export var target: Node2D: set = _set_target 
 

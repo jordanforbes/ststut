@@ -51,6 +51,7 @@ func take_damage(damage: int)-> void:
 	
 	#if player has 0 health they're deleted from the scene
 	if stats.health <= 0:
+		Events.player_died.emit()
 		queue_free()
 	
 	

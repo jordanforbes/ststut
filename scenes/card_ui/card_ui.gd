@@ -19,9 +19,9 @@ const HOVER_STYLEBOX := preload("res://scenes/card_ui/card_hover_stylebox.tres")
 @onready var card_state_machine: CardStateMachine = $CardStateMachine as CardStateMachine
 #all current targets for cards
 @onready var targets: Array[Node] = [] 
-#card placement in hand
-@onready var original_index := self.get_index()
 
+#card placement in hand
+var original_index := 0
 var parent: Control 
 var tween: Tween
 var playable := true : set = _set_playable 
@@ -65,9 +65,6 @@ func _set_card(value: Card) -> void:
 		await ready
 	
 	card = value 
-	print("CARD DEBUG")
-	print(card)
-	print(value)
 	cost.text = str(card.cost)
 	icon.texture = card.icon
 	
